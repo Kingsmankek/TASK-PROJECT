@@ -1,0 +1,34 @@
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Total Task', 'Completed Task', 'Uncompleted Task',],
+            datasets: [
+                {
+                    label: 'Task Graph',
+                    data: [{{ total_data }}, {{ complete_task }},{{ uncomplete_task }} ],
+    backgroundColor: [
+        'rgba(255, 99, 132,  1)',
+        'rgba(54, 162, 235, 1)',
+        '#0000ff',
+
+    ],
+        borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            '#0000ff',
+
+        ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
